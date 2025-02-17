@@ -134,7 +134,7 @@ const instructionList = [
     displayAssembledCode(memory.value)
   }
   
-  function runCode() {
+  function runCode() { // Starts running the program
     resetProgram()
     memory.value = structuredClone(memory.backup)
     running = true
@@ -143,8 +143,12 @@ const instructionList = [
     cu.context = "Running program..."
     nextStage()
   }
+
+  function openGithubLink() { // Opens GitHub link in new window
+    window.open("https://github.com/shephardluke/little-man-computer", "_blank").focus()
+  }
   
-  function nextStage() {
+  function nextStage() { // Next stage of FDE cycle
     currentStage++
     if (currentStage === stages.length) {
       currentStage = 0
@@ -162,7 +166,7 @@ const instructionList = [
   }
   
   
-  function resetRegisters() {
+  function resetRegisters() { // Reset all the registers in the array
     for (let i = 1; i < registers.length; i++) {
       registers[i].clear()
     }
@@ -215,7 +219,7 @@ const instructionList = [
   }
   
   function inputValue(value) { // when the input button is pressed
-    if (waitingForInput[0]) { // waiting for the user to input
+    if (!isNaN(Number(value)) && value.trim() != "" && waitingForInput[0]) { // waiting for the user to input
       waitingForInput[1](value) // run the instruction if its waiting for user
       clearInputBox() // remove user's text to show its been taken
     }

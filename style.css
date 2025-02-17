@@ -46,11 +46,11 @@ html, body {
       overflow: hidden;
     }
     
-    
     #titleBox {
       margin-top: 0;
       width: 20%;
       height: 4.5%;
+      text-align: center;
     }
     
     #outputtedCode {

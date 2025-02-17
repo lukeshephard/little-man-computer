@@ -1,7 +1,7 @@
 // global variables
 let codeInput, assembledCode, inputBox, outputtedCode // textboxes
 let titleBox, saveCodeButton, loadCodeButton //saving and loading buttons and the title textbox
-let assembleButton, runButton, inputSubmit // buttons
+let assembleButton, runButton, inputSubmit, githubButton // buttons
 let registers, memory, cir, pc, mdr, mar, acc, cu, alu // memory, cu and alu are not registers in real life but in this simulation they act similar.
 
 let speedSlider
@@ -35,6 +35,9 @@ function setupMenuBar() { // all the setup for the top bar
 
   speedSlider = createSlider(10, 300, 35)
   speedSlider.id("speedSlider")
+
+  githubButton = new Button(createButton("View on GitHub"), "githubButton", openGithubLink)
+  githubButton.button.class("optionButton")
 }
 
 function setupLMC() { // all the boxes for typing and inputting
@@ -51,6 +54,7 @@ function setupLMC() { // all the boxes for typing and inputting
   inputBox.value = 0
   inputBox.element.placeholder = "Input"
   inputBox.textbox.class("LMCBox")
+  inputBox.element.maxLength = 3
   inputBox.element.addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
       event.preventDefault()
@@ -114,6 +118,8 @@ function sizeMenuBar() {
   runButton.button.position(windowWidth / 2 + windowWidth * 0.005, windowHeight / 75)
 
   speedSlider.position(windowWidth / 2 - windowWidth * 0.005, windowHeight / 75 + runButton.element.offsetHeight)
+
+  githubButton.button.position(windowWidth - githubButton.element.offsetWidth - windowWidth * 0.02, windowHeight / 75)
 }
 
 function sizeLMC() {

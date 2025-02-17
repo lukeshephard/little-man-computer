@@ -40,6 +40,8 @@ class AnimationController { // Keeps track of running animations
     let para1 = this.animations[0][2]
     let para2 = this.animations[0][3]
     // display context
+    // sendLDA
+    // Load
     switch (ins) {
       case cu.copyRegister:
         let name = para1.name; 
@@ -50,6 +52,12 @@ class AnimationController { // Keeps track of running animations
         break
       case pc.increment:
         cu.context = "Incrementing PC"
+        break
+      case cu.sendLDA:
+        cu.context = "Reading from RAM"
+        break
+      case memory.load:
+        cu.context = "Copying RAM contents to MDR"
         break
     }
   }
