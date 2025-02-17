@@ -39,9 +39,8 @@ class AnimationController { // Keeps track of running animations
     let ins = this.animations[0][1]
     let para1 = this.animations[0][2]
     let para2 = this.animations[0][3]
+    
     // display context
-    // sendLDA
-    // Load
     switch (ins) {
       case cu.copyRegister:
         let name = para1.name; 
