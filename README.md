@@ -1,6 +1,9 @@
 # LMC (Little Man Computer)
 ### https://little-man-computer.shephardluke.co.uk/
 ### 2023 A Level Computer Science NEA (Result A*)
+
+### See the [first release](https://github.com/ShephardLuke/little-man-computer/releases/tag/v1.0.0) for A Level version, as there have been some minor updates since then.
+
 Made using [p5.js](https://p5js.org/)
 
 Type code into the big textarea, press assemble to turn the words into numeric codes and then press run to watch the program run with animations showing the [Fetch-Decode-Execute](https://en.wikipedia.org/wiki/Instruction_cycle) cycle step by step. 
@@ -23,4 +26,4 @@ Code can be saved and loaded in the form of TXT files using the top buttons, and
 |000|HLT|
 |XXX|DAT|
 
-For more information check the LMC [Wikipedia](https://en.wikipedia.org/wiki/Little_man_computer) page.
+For more information on LMC check the [LMC Wikipedia page](https://en.wikipedia.org/wiki/Little_man_computer).
